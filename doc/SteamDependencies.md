@@ -6,7 +6,7 @@ the rpmfusion repos and run
 
 
 
-These are the dependencies for Fedora to use Steam,
+These are the dependencies for Fedora to use Steam if you cannot use RPM-Fusion,
 ```
 sudo dnf install  NetworkManager-libnm.i686   \
  alsa-lib.i686   \
