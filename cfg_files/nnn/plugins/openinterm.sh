@@ -1,5 +1,5 @@
 #!/bin/sh
-f=$2/$1
+f=$2/
 
 nohup alacritty --working-directory "$f" &
 sleep 2;
