@@ -98,7 +98,7 @@ case "$choice" in
 	ln -s $HOME/glowing-enigma/cfg_files/kitty $HOME/.config/
 	ln -s $HOME/glowing-enigma/cfg_files/lf $HOME/.config/
 	ln -s $HOME/glowing-enigma/cfg_files/mako $HOME/.config/
-	ln -s $HOME/glowing-enigma/cfg_files/nnn/plugins $HOME/.config/nnn
+	ln -sf $HOME/glowing-enigma/cfg_files/nnn/plugins $HOME/.config/nnn/
 	ln -s $HOME/glowing-enigma/cfg_files/nvim.back $HOME/.config/
 	ln -s $HOME/glowing-enigma/cfg_files/sway $HOME/.config/
 	ln -s $HOME/glowing-enigma/cfg_files/tmux $HOME/.config/
