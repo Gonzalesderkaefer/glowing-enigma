@@ -6,7 +6,7 @@
 
 ## Determine what distro is running ##
 
-release="$(cat /etc/*-release | awk 'NR==1')"
+release="$(cat /etc/*-release)"
 
 echo -e "\033[0;32m Determining Distro ... \033[0m "
 
