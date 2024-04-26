@@ -83,6 +83,7 @@ case "$choice" in
 	cp -r cfg_files/vifm $HOME/.config/
 	cp -r cfg_files/waybar $HOME/.config/
 	cp -r cfg_files/wofi $HOME/.config/
+	cp -r cfg_files/hypr $HOME/.config/
 	cp -r cfg_files/zathura $HOME/.config/
 	echo "Press ENTER to continue."
 	read cont
@@ -105,6 +106,7 @@ case "$choice" in
 	ln -s $HOME/glowing-enigma/cfg_files/vifm $HOME/.config/
 	ln -s $HOME/glowing-enigma/cfg_files/waybar $HOME/.config/
 	ln -s $HOME/glowing-enigma/cfg_files/wofi $HOME/.config/
+	ln -s $HOME/glowing-enigma/cfg_files/hypr $HOME/.config/
 	ln -s $HOME/glowing-enigma/cfg_files/zathura $HOME/.config/
 	echo "Press ENTER to continue."
 	read cont
