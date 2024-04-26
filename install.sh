@@ -121,7 +121,7 @@ esac
 
 ## Enabling systemd services ##
 echo -e "\033[0;32m enabling systemd services \033[0m"
-sudo systemctl enable tlp #### NOTE: this is for Laptops, If you are on a Desktop, run `sudo systemctl disable tlp`
+sudo systemctl enable tlp #### NOTE:: This is for Laptops. If you are on a Desktop, run `sudo systemctl disable tlp`
 sudo systemctl set-default graphical.target
 
 
@@ -137,11 +137,35 @@ case "$SHELL" in
 	cp cfg_files/shell/bash/profile  $HOME/.bash_profile
 	### If running Arch Linux, remove "source bashprofile" from bashrc ###
 	[ $distro = "Arch Linux" ] && sed -i ""$(awk '/source/ {print FNR}' $HOME/.bashrc)" d" $HOME/.bashrc
-	### If there are proprietary NVIDIA Drivers running write the following lines into .bash_profile ###
-	[ -z "$(lspci -v | grep "driver in use *. nvidia")" ] || echo 'export WLR_RENDERER=vulkan
-	export WLR_NO_HARDWARE_CURSORS=1
-	export XWAYLAND_NO_GLAMOR=1
-	[ "$(tty)" = "/dev/tty1" ] && exec sway --unsupported-gpu ' >> $HOME/.bash_profile && echo '[ "$(tty)" = "/dev/tty1" ] && exec sway ' >> $HOME/.bash_profile
+	echo "What do you  want to use"
+	echo "[S]way"
+	echo "[H]yprland"
+	read choice
+	case "$choice" in
+	    "s" | "S"| "sway")
+			### If there are proprietary NVIDIA Drivers running write the following lines into .bash_profile ###
+			[ -z "$(lspci -v | grep "driver in use *. nvidia")" ] || echo 'export WLR_RENDERER=vulkan
+			export WLR_NO_HARDWARE_CURSORS=1
+			export XWAYLAND_NO_GLAMOR=1
+			[ "$(tty)" = "/dev/tty1" ] && exec sway --unsupported-gpu ' >> $HOME/.bash_profile && echo '[ "$(tty)" = "/dev/tty1" ] && exec sway ' >> $HOME/.bash_profile
+			;;
+	    "h" | "H" | "hyprland")
+			### If there are proprietary NVIDIA Drivers running write the following lines into .bash_profile ###
+			[ -z "$(lspci -v | grep "driver in use *. nvidia")" ] || echo 'export WLR_RENDERER=vulkan
+			export WLR_NO_HARDWARE_CURSORS=1
+			export XWAYLAND_NO_GLAMOR=1
+			[ "$(tty)" = "/dev/tty1" ] && exec Hyprland'  >> $HOME/.bash_profile && '[ "$(tty)" = "/dev/tty1" ] && exec Hyprland' >> $HOME/.bash_profile
+			;
+	    *)
+			echo "Assuming you want to use sway."
+			### If there are proprietary NVIDIA Drivers running write the following lines into .bash_profile ###
+			[ -z "$(lspci -v | grep "driver in use *. nvidia")" ] || echo 'export WLR_RENDERER=vulkan
+			export WLR_NO_HARDWARE_CURSORS=1
+			export XWAYLAND_NO_GLAMOR=1
+			[ "$(tty)" = "/dev/tty1" ] && exec sway --unsupported-gpu ' >> $HOME/.bash_profile && echo '[ "$(tty)" = "/dev/tty1" ] && exec sway ' >> $HOME/.bash_profile
+			;;
+	esac
+
 	;;
     *"zsh"*)
 	echo -e "\033[0;32m Found SHELL: zsh \033[0m"
@@ -149,11 +173,35 @@ case "$SHELL" in
 	cp $HOME/glowing-enigma/cfg_files/shell/zsh/zshenv $HOME/.zshenv
 	cp $HOME/glowing-enigma/cfg_files/shell/zsh/zprofile $HOME/.zprofile
 	cp $HOME/glowing-enigma/cfg_files/shell/zsh/zcompdump $HOME/.zcompdump
-	### If there are proprietary NVIDIA Drivers running write the following lines into .bash_profile ###
-	[ -z "$(lspci -v | grep "driver in use *. nvidia")" ] || (echo 'export WLR_RENDERER=vulkan
-	export WLR_NO_HARDWARE_CURSORS=1
-	export XWAYLAND_NO_GLAMOR=1' >> $HOME/.zshenv && echo '[ "$(tty)" = "/dev/tty1" ] && exec sway --unsupported-gpu' >> $HOME/.zprofile ) 
-	[ -z "$(lspci -v | grep "driver in use *. nvidia")" ] && echo '[ "$(tty)" = "/dev/tty1" ] && exec sway' >> $HOME/.zprofile 
-	;;
+
+	echo "What do you  want to use"
+	echo "[S]way"
+	echo "[H]yprland"
+	read choice
+
+	case "$choice" in
+	    "s" | "S" | "sway")
+		### If there are proprietary NVIDIA Drivers running write the following lines into .bash_profile ###
+		[ -z "$(lspci -v | grep "driver in use *. nvidia")" ] || (echo 'export WLR_RENDERER=vulkan
+		export WLR_NO_HARDWARE_CURSORS=1
+		export XWAYLAND_NO_GLAMOR=1' >> $HOME/.zshenv && echo '[ "$(tty)" = "/dev/tty1" ] && exec sway --unsupported-gpu' >> $HOME/.zprofile ) 
+		[ -z "$(lspci -v | grep "driver in use *. nvidia")" ] && echo '[ "$(tty)" = "/dev/tty1" ] && exec sway' >> $HOME/.zprofile 
+		;;
+	    "h" | "H" | "hyprland")
+		### If there are proprietary NVIDIA Drivers running write the following lines into .bash_profile ###
+		[ -z "$(lspci -v | grep "driver in use *. nvidia")" ] || (echo 'export WLR_RENDERER=vulkan
+		export WLR_NO_HARDWARE_CURSORS=1
+		export XWAYLAND_NO_GLAMOR=1' >> $HOME/.zshenv && echo '[ "$(tty)" = "/dev/tty1" ] && exec Hyprland' >> $HOME/.zprofile ) 
+		[ -z "$(lspci -v | grep "driver in use *. nvidia")" ] && echo '[ "$(tty)" = "/dev/tty1" ] && exec Hyprland' >> $HOME/.zprofile 
+		;;
+	    *)
+		echo "Assuming you want to use sway"
+		### If there are proprietary NVIDIA Drivers running write the following lines into .bash_profile ###
+		[ -z "$(lspci -v | grep "driver in use *. nvidia")" ] || (echo 'export WLR_RENDERER=vulkan
+		export WLR_NO_HARDWARE_CURSORS=1
+		export XWAYLAND_NO_GLAMOR=1' >> $HOME/.zshenv && echo '[ "$(tty)" = "/dev/tty1" ] && exec sway --unsupported-gpu' >> $HOME/.zprofile ) 
+		[ -z "$(lspci -v | grep "driver in use *. nvidia")" ] && echo '[ "$(tty)" = "/dev/tty1" ] && exec sway' >> $HOME/.zprofile 
+		;;
+	esac
 esac
 
