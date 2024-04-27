@@ -1,13 +1,13 @@
 {
-     "layer": "top", // Waybar at top layer
+    // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 35, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-left": ["hyprland/workspaces","hyprland/window"],
     "modules-center": [],
-    "modules-right": ["custom/home","custom/drivespace", "idle_inhibitor" ,"pulseaudio", "battery", "cpu", "memory", "temperature", "clock", "tray"],
+    "modules-right": ["custom/keyboard","custom/home", "custom/drivespace", "idle_inhibitor" ,"pulseaudio", "battery", "cpu", "memory", "temperature", "clock", "tray"],
 
 
     "idle_inhibitor": {
@@ -18,10 +18,28 @@
         }
     },
 
+//    "sway/workspaces": {
+//        "format":" {icon} ",
+//        "format-icons": {
+//            "1": "",
+//            "2": "",
+//            "3": "",
+//            "4": "",
+//            "5": "",
+//        },
+//	 "persistent_workspaces":{
+//		  "1": [],
+//		  "2": [],
+//		  "3": [],
+//		  "4": [],
+//		  "5": []
+//	      },
+//
+//    },
+
     "tray": {
         // "icon-size": 21,
-        "spacing": 10,
-        "layer": "top"
+        "spacing": 10
     },
 
     "clock": {
@@ -40,14 +58,21 @@
     "custom/drivespace": {
         "interval": "3600s",
         "exec": "df -H | grep -e '/$'| awk '{print $3}'",
-	"format":" {}"	
+        "format":" {}",
     },
 
+    "custom/keyboard": {
+        "interval": "once",
+        "exec": "echo $(swaymsg -t get_inputs | grep \"xkb_active_layout_name\"| sed -n 1p | tr -d '\":(,.)' | awk '{print $2 \" \" $3}')" ,
+        "format":"{}  ",
+        "signal" : 5
+    },
     "custom/home": {
         "interval": "3600s",
         "exec": "df -H | grep -e '/home$'| awk '{print $3}'",
-	"format":" {}"	
+	"format":" {}"
     },
+ 
 
     "cpu": {
         "format": "{usage}% ",
