@@ -55,6 +55,12 @@ case $release in
         sudo pacman -S fzf zsh nnn kitty networkmanager  nm-connection-editor neovim sway waybar wofi zathura-pdf-poppler zathura evince webkit2gtk-4.1 networkmanager-openconnect firefox lf tlp alacritty pulseaudio pulsemixer waybar mpv gsettings-desktop-schemas nerd-fonts swayidle swaylock openconnect lxappearance wl-clipboard file-roller papirus-icon-theme gnome-themes-extra arc-gtk-theme
         ;;
     *)
+        echo -e "\033[0;32m You seem to be using a distro that is not covered by this script \033[0m "
+        echo -e "\033[0;32m Cannot install packages \033[0m "
+	echo -e "\033[0;32m Please install them manually (see this script for packages) \033[0m "
+        echo "Press ENTER to continue."
+        read cont
+	;;
 esac
 
 
