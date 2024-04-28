@@ -53,7 +53,6 @@ set $term alacritty
 ### Setting the run menu
 set $menu w-rofi
 
-### Setting
 
 ## Idle configuration
 
