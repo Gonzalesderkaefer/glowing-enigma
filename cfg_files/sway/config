@@ -1,4 +1,9 @@
-
+#   ____
+#  / ___|_      ____ _ _   _
+#  \___ \ \ /\ / / _` | | | |
+#   ___) \ V  V / (_| | |_| |
+#  |____/ \_/\_/ \__,_|\__, |
+#                     |___/
 
 
 ## Include devicespecifc configuration
@@ -160,9 +165,14 @@ bindsym XF86Calculator exec qalculate-gtk
 #### Start a terminal
 bindsym $mod+Return exec $term
 
-#### Start a Launcher
+#### Start a Powermenu
 bindsym Alt+F4 exec powermenu
 
+#### Start a Launcher
+bindsym Alt+space exec w-rofi
+
+#### Start a browser
+bindsym $mod+b exec firefox -p
 
 
 
