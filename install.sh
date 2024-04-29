@@ -42,7 +42,7 @@ case $release in
         libnotify mako swaybg google-noto-color-emoji-fonts qalculate-gtk fzf 
         ;;
     *Arch* | *ARCH* | *arch*) echo -e "\033[0;32m Found Arch Linux.\033[0m"
-        distro="Arch Linux"
+        distro="Arch"
 
         echo -e "\033[0;32m Going to update and install predefined packages(see this script) \033[0m "
         echo "Press ENTER to continue."
@@ -52,7 +52,7 @@ case $release in
 	sudo pacman -Syu
 
         ### Installing packages ###
-        sudo pacman -S fzf zsh nnn kitty networkmanager  nm-connection-editor neovim sway waybar wofi zathura-pdf-poppler zathura evince webkit2gtk-4.1 networkmanager-openconnect firefox lf tlp alacritty pulseaudio pulsemixer waybar mpv gsettings-desktop-schemas nerd-fonts swayidle swaylock openconnect lxappearance wl-clipboard file-roller papirus-icon-theme gnome-themes-extra arc-gtk-theme
+        sudo pacman -S swaybg fzf zsh nnn kitty networkmanager  nm-connection-editor neovim sway waybar wofi zathura-pdf-poppler zathura evince webkit2gtk-4.1 networkmanager-openconnect firefox lf tlp alacritty pulseaudio pulsemixer waybar mpv gsettings-desktop-schemas nerd-fonts swayidle swaylock openconnect lxappearance wl-clipboard file-roller papirus-icon-theme gnome-themes-extra arc-gtk-theme
         ;;
     *)
         echo -e "\033[0;32m You seem to be using a distro that is not covered by this script \033[0m "
@@ -142,7 +142,7 @@ case "$SHELL" in
 	cp cfg_files/shell/bash/bashrc  $HOME/.bashrc
 	cp cfg_files/shell/bash/profile  $HOME/.bash_profile
 	### If running Arch Linux, remove "source bashprofile" from bashrc ###
-	[ $distro = "Arch Linux" ] && sed -i ""$(awk '/source/ {print FNR}' $HOME/.bashrc)" d" $HOME/.bashrc
+	[ $distro = "Arch" ] && sed -i "s/source \/etc\/profile.d\/bash_completion.sh//" $HOME/.bashrc || echo "not Arch"
 	echo "What do you  want to use"
 	echo "[S]way"
 	echo "[H]yprland"
