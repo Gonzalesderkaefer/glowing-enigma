@@ -147,6 +147,9 @@ bindsym $mod+f fullscreen
 ### Make currnt window floating
 bindsym $mod+t floating toggle
 
+### Switch to tabbed layout
+bindsym $mod+w layout tabbed
+
 ### Kill current window
 bindsym $mod+q kill
 
