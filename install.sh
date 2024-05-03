@@ -86,7 +86,6 @@ case "$choice" in
 	cp -r cfg_files/nvim.back $HOME/.config/
 	cp -r cfg_files/sway $HOME/.config/
 	cp -r cfg_files/tmux $HOME/.config/
-	cp -r cfg_files/vifm $HOME/.config/
 	cp -r cfg_files/waybar $HOME/.config/
 	cp -r cfg_files/wofi $HOME/.config/
 	cp -r cfg_files/hypr $HOME/.config/
@@ -109,7 +108,6 @@ case "$choice" in
 	ln -s $HOME/glowing-enigma/cfg_files/nvim.back $HOME/.config/
 	ln -s $HOME/glowing-enigma/cfg_files/sway $HOME/.config/
 	ln -s $HOME/glowing-enigma/cfg_files/tmux $HOME/.config/
-	ln -s $HOME/glowing-enigma/cfg_files/vifm $HOME/.config/
 	ln -s $HOME/glowing-enigma/cfg_files/waybar $HOME/.config/
 	ln -s $HOME/glowing-enigma/cfg_files/wofi $HOME/.config/
 	ln -s $HOME/glowing-enigma/cfg_files/hypr $HOME/.config/
