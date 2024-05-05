@@ -23,7 +23,7 @@ case $release in
         sudo apt update && sudo apt upgrade -y
 
         ### Installing packages 
-        sudo apt install swaylock zsh file-roller evince flatpak cbatticon network-manager network-manager-gnome network-manager-openconnect-gnome eom network-manager-openconnect lxappearance git lf neovim fonts-jetbrains-mono firefox-esr tlp alacritty kitty brightnessctl pulsemixer sway wofi waybar fonts-material-design-icons-iconfont fonts-font-awesome xwayland libglib2.0-bin fonts-noto-color-emoji wlr-randr nala wl-clipboard mpv swayidle papirus-icon-theme gnome-themes-extra pulseaudio arc-theme libnotify-bin mako-notifier acpi-support acpid acpi linux-cpupower cpufrequtils openssh-server nnn fzf
+        sudo apt install tmux swaylock zsh file-roller evince flatpak cbatticon network-manager network-manager-gnome network-manager-openconnect-gnome eom network-manager-openconnect lxappearance git lf neovim fonts-jetbrains-mono firefox-esr tlp alacritty kitty brightnessctl pulsemixer sway wofi waybar fonts-material-design-icons-iconfont fonts-font-awesome xwayland libglib2.0-bin fonts-noto-color-emoji wlr-randr nala wl-clipboard mpv swayidle papirus-icon-theme gnome-themes-extra pulseaudio arc-theme libnotify-bin mako-notifier acpi-support acpid acpi linux-cpupower cpufrequtils openssh-server nnn fzf
         ;;
     *Fedora* | *FEDORA* | *fedora*) echo -e "\033[0;32m Found Fedora.\033[0m"
         distro="Fedora"
@@ -36,7 +36,7 @@ case $release in
         sudo dnf update && 
 
         ### Installing packages 
-        sudo dnf install sway swaybg kitty swayidle zsh swaylock pinentry-gtk pinentry \
+        sudo dnf install sway tmux swaybg kitty swayidle zsh swaylock pinentry-gtk pinentry \
         thunar polkit-gnome nnn neovim waybar alacritty mpv firefox zathura zathura-pdf-poppler evince git pulseaudio-utils pipewire-utils file-roller \
         NetworkManager-openconnect-gnome wofi brightnessctl gsettings-desktop-schemas wl-clipboard papirus-icon-theme NetworkManager-tui eom tlp \
         libnotify mako swaybg google-noto-color-emoji-fonts qalculate-gtk fzf 
@@ -52,7 +52,7 @@ case $release in
 	sudo pacman -Syu
 
         ### Installing packages 
-        sudo pacman -S swaybg fzf zsh nnn kitty networkmanager  nm-connection-editor neovim sway waybar wofi zathura-pdf-poppler zathura evince webkit2gtk-4.1 networkmanager-openconnect firefox lf tlp alacritty pulseaudio pulsemixer waybar mpv gsettings-desktop-schemas nerd-fonts swayidle swaylock openconnect lxappearance wl-clipboard file-roller papirus-icon-theme gnome-themes-extra arc-gtk-theme
+        sudo pacman -S swaybg fzf tmux zsh nnn kitty networkmanager  nm-connection-editor neovim sway waybar wofi zathura-pdf-poppler zathura evince webkit2gtk-4.1 networkmanager-openconnect firefox lf tlp alacritty pulseaudio pulsemixer waybar mpv gsettings-desktop-schemas nerd-fonts swayidle swaylock openconnect lxappearance wl-clipboard file-roller papirus-icon-theme gnome-themes-extra arc-gtk-theme
         ;;
     *)
         echo -e "\033[0;32m You seem to be using a distro that is not covered by this script \033[0m "
