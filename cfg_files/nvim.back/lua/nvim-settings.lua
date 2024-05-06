@@ -29,6 +29,14 @@ vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
 vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
 vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 
+
+-- Binding y to yank into +
+vim.cmd("set clipboard+=unnamedplus")
+
+
+
+
+
 -- Autocmds --
 -- Compile LaTeX after writing
 vim.cmd("autocmd BufWritePost *.tex !pdflatex %")
