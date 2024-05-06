@@ -90,6 +90,7 @@ case "$choice" in
 	cp -r cfg_files/wofi $HOME/.config/
 	cp -r cfg_files/hypr $HOME/.config/
 	cp -r cfg_files/zathura $HOME/.config/
+	cp -r cfg_files/tmux $HOME/.config/
 	echo "Press ENTER to continue."
 	read cont
 	echo -e "\033[0;32m copying scipts to '~/.local/bin/ \033[0m"
@@ -112,6 +113,7 @@ case "$choice" in
 	ln -s $HOME/glowing-enigma/cfg_files/wofi $HOME/.config/
 	ln -s $HOME/glowing-enigma/cfg_files/hypr $HOME/.config/
 	ln -s $HOME/glowing-enigma/cfg_files/zathura $HOME/.config/
+	ln -s $HOME/glowing-enigma/cfg_files/tmux $HOME/.config/
 	echo "Press ENTER to continue."
 	read cont
 
