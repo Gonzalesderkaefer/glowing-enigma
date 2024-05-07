@@ -78,12 +78,12 @@ style = "Italic"
 family = "JetBrains Mono Nerd Font"
 style = "Regular"
 
-[[keyboard.bindings]]
-action = "Paste"
-key = "P"
-mods = "Control"
-
-[[keyboard.bindings]]
-action = "Copy"
-key = "Y"
-mods = "Control"
+#[[keyboard.bindings]]
+#action = "Paste"
+#key = "P"
+#mods = "Control"
+#
+#[[keyboard.bindings]]
+#action = "Copy"
+#key = "Y"
+#mods = "Control"
