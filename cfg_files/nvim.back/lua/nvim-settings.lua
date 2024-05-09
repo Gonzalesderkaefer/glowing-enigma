@@ -10,7 +10,10 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Enable Numberlines
-vim.cmd("set number")
+vim.opt.number = true
+
+-- Keep signcolumn on by default
+vim.opt.signcolumn = 'yes'
 
 -- Enable current line highlighting
 vim.cmd("set cursorline")
