@@ -76,7 +76,8 @@ exec nm-applet
 ### Launching Pokit
 exec /lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 
-
+### This needs to be put in so that waybar does not take 2 minutes to launch (not entirely sure what it does)
+exec dbus-update-activation-environment --systemd DISPLAY
 
 ## Keybindings 
 
