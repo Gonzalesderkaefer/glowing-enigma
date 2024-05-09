@@ -64,11 +64,16 @@ case $release in
 esac
 
 
-## Make directory if .local/bin does not exist 
-ls $HOME/.local/bin || mkdir -p $HOME/.local/bin/ 
+## Make directory if .local/bin does not exist
+ls $HOME/.local/bin || mkdir -p $HOME/.local/bin/
 
-## create Pictures and screenshot dir if not existent 
+## create Pictures and screenshot dir if not existent
 ls $HOME/Pictures/screenshots/ || mkdir -p $HOME/Pictures/screenshots
+
+## If $HOME/.config does not exist make it
+ls $HOME/.config/ || mkdir -p $HOME/.config/
+
+## create .trash directory if it does not exist
 mkdir $HOME/.trash/
 
 ## Ask user whether to copy or link configs and scripts 
@@ -100,6 +105,8 @@ case "$choice" in
 	read cont
 	;;
     'l'|'L')
+	### This folder will not exist initially
+	mkdir -p $HOME/.config/nnn/
 	echo -e "\033[0;32m creating sym-links...\033[0m "
 	ln -s $HOME/glowing-enigma/cfg_files/alacritty $HOME/.config/
 	ln -s $HOME/glowing-enigma/cfg_files/kitty $HOME/.config/
