@@ -52,7 +52,7 @@ case $release in
 	sudo pacman -Syu
 
         ### Installing packages 
-        sudo pacman -S swaybg fzf tmux zsh nnn kitty networkmanager  nm-connection-editor neovim sway waybar wofi zathura-pdf-poppler zathura evince webkit2gtk-4.1 networkmanager-openconnect firefox lf tlp alacritty pulseaudio pulsemixer waybar mpv gsettings-desktop-schemas swayidle swaylock openconnect lxappearance wl-clipboard file-roller papirus-icon-theme gnome-themes-extra arc-gtk-theme ttf-jetbrains-mono ttf-jetbrains-mono-nerd
+        sudo pacman -S swaybg fzf tmux zsh nnn kitty networkmanager  nm-connection-editor neovim sway waybar wofi zathura-pdf-poppler zathura evince webkit2gtk-4.1 networkmanager-openconnect firefox lf tlp alacritty pulseaudio pulsemixer waybar mpv gsettings-desktop-schemas swayidle swaylock openconnect lxappearance wl-clipboard file-roller papirus-icon-theme gnome-themes-extra arc-gtk-theme ttf-jetbrains-mono ttf-jetbrains-mono-nerd gcr
         ;;
     *)
         echo -e "\033[0;32m You seem to be using a distro that is not covered by this script \033[0m "
