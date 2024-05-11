@@ -61,6 +61,12 @@
         "format":" {}",
     },
 
+    "custom/home": {
+        "interval": "3600s",
+        "exec": "df -H | grep -e '/home$'| awk '{print $3}'",
+	"format":" {}"
+    },
+
     "custom/keyboard": {
         "interval": "once",
         "exec": "echo $(swaymsg -t get_inputs | grep \"xkb_active_layout_name\"| sed -n 1p | tr -d '\":(,.)' | awk '{print $2 \" \" $3}')" ,
