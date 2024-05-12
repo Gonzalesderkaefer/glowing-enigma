@@ -19,6 +19,7 @@ case "$choice" in
 	cp -r cfg_files/wofi $HOME/.config/
 	cp -r cfg_files/hypr $HOME/.config/
 	cp -r cfg_files/zathura $HOME/.config/
+	cp -r cfg_files/river $HOME/.config/
 	cp -r cfg_files/tmux $HOME/.config/
 	echo "Press ENTER to continue."
 	read cont

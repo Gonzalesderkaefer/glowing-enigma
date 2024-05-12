@@ -120,6 +120,7 @@ case "$choice" in
 	ln -s $HOME/glowing-enigma/cfg_files/wofi $HOME/.config/
 	ln -s $HOME/glowing-enigma/cfg_files/hypr $HOME/.config/
 	ln -s $HOME/glowing-enigma/cfg_files/zathura $HOME/.config/
+	ln -s $HOME/glowing-enigma/cfg_files/river $HOME/.config/
 	ln -s $HOME/glowing-enigma/cfg_files/tmux $HOME/.config/
 	echo "Press ENTER to continue."
 	read cont
