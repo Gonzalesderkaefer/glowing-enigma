@@ -4,7 +4,7 @@ menu="$(echo " Poweroff
  Reboot
 󰍃 Logout
  Suspend
- Hibernate
+󰒲 Hibernate
  Lock" | wofi --dmenu -i)"
 
 case $menu in
