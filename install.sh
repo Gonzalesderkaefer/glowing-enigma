@@ -154,6 +154,7 @@ case "$SHELL" in
 	echo "What do you  want to use"
 	echo "[S]way"
 	echo "[H]yprland"
+	echo "[R]iver"
 	read choice
 	case "$choice" in
 	    "s" | "S"| "sway")
@@ -170,6 +171,13 @@ case "$SHELL" in
 			export XWAYLAND_NO_GLAMOR=1
 			[ "$(tty)" = "/dev/tty1" ] && exec Hyprland'  >> $HOME/.bash_profile && '[ "$(tty)" = "/dev/tty1" ] && exec Hyprland' >> $HOME/.bash_profile
 			;;
+	    "r" | "R" | "River")
+			### If there are proprietary NVIDIA Drivers running write the following lines into .bash_profile 
+			[ -z "$(lspci -v | grep "driver in use *. nvidia")" ] || echo 'export WLR_RENDERER=vulkan
+			export WLR_NO_HARDWARE_CURSORS=1
+			export XWAYLAND_NO_GLAMOR=1
+			[ "$(tty)" = "/dev/tty1" ] && exec river'  >> $HOME/.bash_profile && '[ "$(tty)" = "/dev/tty1" ] && exec river' >> $HOME/.bash_profile
+			
 	    *)
 			echo "Assuming you want to use sway."
 			### If there are proprietary NVIDIA Drivers running write the following lines into .bash_profile 
@@ -191,6 +199,7 @@ case "$SHELL" in
 	echo "What do you  want to use"
 	echo "[S]way"
 	echo "[H]yprland"
+	echo "[R]iver"
 	read choice
 
 	case "$choice" in
@@ -207,6 +216,13 @@ case "$SHELL" in
 		export WLR_NO_HARDWARE_CURSORS=1
 		export XWAYLAND_NO_GLAMOR=1' >> $HOME/.zshenv && echo '[ "$(tty)" = "/dev/tty1" ] && exec Hyprland' >> $HOME/.zprofile ) 
 		[ -z "$(lspci -v | grep "driver in use *. nvidia")" ] && echo '[ "$(tty)" = "/dev/tty1" ] && exec Hyprland' >> $HOME/.zprofile 
+		;;
+	    "r" | "R" | "river")
+		### If there are proprietary NVIDIA Drivers running write the following lines into .bash_profile 
+		[ -z "$(lspci -v | grep "driver in use *. nvidia")" ] || (echo 'export WLR_RENDERER=vulkan
+		export WLR_NO_HARDWARE_CURSORS=1
+		export XWAYLAND_NO_GLAMOR=1' >> $HOME/.zshenv && echo '[ "$(tty)" = "/dev/tty1" ] && exec river' >> $HOME/.zprofile ) 
+		[ -z "$(lspci -v | grep "driver in use *. nvidia")" ] && echo '[ "$(tty)" = "/dev/tty1" ] && exec river' >> $HOME/.zprofile 
 		;;
 	    *)
 		echo "Assuming you want to use sway"
