@@ -77,6 +77,10 @@ button:hover {
 }
 
 
+
+#tags button {
+    padding : 5px;
+}
 #tags button.active {
     background: rgba(255, 255, 255, 0.05);
     border-bottom: 2px solid #4287f5;
