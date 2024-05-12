@@ -2,12 +2,11 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: JetbrainsMono Nerd Font;
     font-size: 13px;
-    font-weight: Bold;
 }
 
 
 window#waybar {
-    background-color:#24273a;
+    background-color:#282A36;
     color: #C5C8C6;
     transition-property: background-color;
     transition-duration: .5s;
@@ -57,7 +56,6 @@ button:hover {
 }
 
 #workspaces button:hover {
-
 }
 
 
@@ -67,27 +65,7 @@ button:hover {
     border-bottom: 2px solid #4287f5;
 }
 
-#workspaces button.focused {
-    background: rgba(255, 255, 255, 0.05);
-    border-bottom: 2px solid #4287f5;
-}
-
 #workspaces button.urgent {
-    background-color: #eb4d4b;
-}
-
-
-#tags button.active {
-    background: rgba(255, 255, 255, 0.05);
-    border-bottom: 2px solid #4287f5;
-}
-
-#tags button.focused {
-    background: rgba(255, 255, 255, 0.05);
-    border-bottom: 2px solid #4287f5;
-}
-
-#tags button.urgent {
     background-color: #eb4d4b;
 }
 
@@ -95,7 +73,6 @@ button:hover {
     background-color: #64727D;
     border-bottom: 3px solid #ffffff;
 }
-
 #custom-kernel,
 #custom-drivespace,
 #clock,
@@ -118,7 +95,6 @@ button:hover {
     color: #ffffff;
 }
 
-
 #window,
 #workspaces {
     margin: 0 4px;
@@ -126,17 +102,28 @@ button:hover {
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left {
+    background-color:#282A36;
+    margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right {
+    background-color:#282A36;
+    margin-right: 0;
 }
 
+.modules-center{
+    background-color:#282A36;
+}
 
+#battery {
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
 
 #clock {
-    color: #f5d0ac;
-    border-bottom: 2px solid #f5d0ac;
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
 }
 
 #custom-kernel {
@@ -147,36 +134,14 @@ button:hover {
 #custom-drivespace {
     color: #fc9877;
     border-bottom: 2px solid #fc9877;
-    padding-right: 10px;
-    padding-left: 10px;
 }
 
 #custom-home {
-    color: #cc5f7f;
-    border-bottom: 2px solid #cc5f7f;
+    color: #ff9877;
+    border-bottom: 2px solid #ff9877;
     padding-right: 10px;
-    padding-left: 5px;
+    padding-left: 10px;
 }
-
-
-#custom-keyboard {
-    color: #ff7777;
-    border-bottom: 2px solid #ff7777;
-    padding-right: 5px;
-    padding-left: 5px;
-}
-#battery.charging {
-    color: #eed49f;
-    border-bottom: 2px solid #eed49f;
-    padding-right: 15px;
-}
-
-#battery {
-    color: #fff;
-    border-bottom: 2px solid #fff;
-    padding-right: 15px;
-}
-
 @keyframes blink {
     to {
         background-color: #ffffff;
