@@ -37,6 +37,8 @@ riverctl map normal Super+Shift E exit
 # Alt+Space to run w-rofi
 riverctl map normal Alt Space spawn w-rofi 
 
+# Alt+F4 to run powermenu
+riverctl map normal Alt F4 spawn powermenu
 
 # Super+J and Super+K to focus the next/previous view in the layout stack
 riverctl map normal Super L focus-view right
