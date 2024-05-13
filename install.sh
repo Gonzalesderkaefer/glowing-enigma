@@ -177,7 +177,7 @@ case "$SHELL" in
 			export WLR_NO_HARDWARE_CURSORS=1
 			export XWAYLAND_NO_GLAMOR=1
 			[ "$(tty)" = "/dev/tty1" ] && exec river'  >> $HOME/.bash_profile && '[ "$(tty)" = "/dev/tty1" ] && exec river' >> $HOME/.bash_profile
-			
+            ;;
 	    *)
 			echo "Assuming you want to use sway."
 			### If there are proprietary NVIDIA Drivers running write the following lines into .bash_profile 
