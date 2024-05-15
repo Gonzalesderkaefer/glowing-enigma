@@ -6,8 +6,6 @@
 #                     |___/
 
 
-## Include devicespecifc configuration
-include devicespecific
 
 
 ## Setting colors
@@ -190,6 +188,8 @@ bindsym $mod+b exec firefox -p
 
 
 
+## Include devicespecifc configuration
+include devicespecific
 
 
 
