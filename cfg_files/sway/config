@@ -159,7 +159,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+q kill
 
 ### Take screenshot 
-bindsym $mod+p grim Pictures/screenshots/"$(date +%a_%b_%d_20%y_%H:%M:%S)".png
+bindsym $mod+p screenshot
 
 ### Media and Display Controls
 bindsym XF86MonBrightnessUp exec brightnessctl -e s +30
