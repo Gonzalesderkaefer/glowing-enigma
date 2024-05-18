@@ -3,7 +3,7 @@ separator=true
 separator_block_width=15
 
 [bat]
-command=./battery.sh
+command=$HOME/.config/i3blocks/battery.sh
 interval=10
 
 [idleinhibit]
