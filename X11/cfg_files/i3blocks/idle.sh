@@ -9,7 +9,7 @@ start_idle()
     timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
     timeout 600 'swaylock -f -c 000000' \
     before-sleep 'swaylock -f -c 000000' &
-    echo $! > "$PIDFILE"
+    echo "󰅶 "
 }
 
 stop_idle()
@@ -24,7 +24,9 @@ stop_idle()
 
 case $BLOCK_BUTTON in
     1)
-        [ -f "$PIDFILE" ] && (stop_idle; echo "󰾪 ") || (start_idle; echo "󰅶 ")
+        kill "$(pgrep swayidle)" && echo "󰾪 " || start_idle
+        ;;
     *)
-        [ -f "$PIDFILE" ] && (echo "󰅶 ") || (echo "󰾪 ")
+        [ -n "$(pgrep swayidle)" ] && (echo "󰅶 ") || (echo "󰾪 ")
+        ;;
 esac
