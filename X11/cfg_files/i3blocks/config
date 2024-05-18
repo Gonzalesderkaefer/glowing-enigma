@@ -6,12 +6,16 @@ separator_block_width=15
 command=./battery.sh
 interval=10
 
+[idleinhibit]
+command=$HOME/.config/i3blocks/idle.sh
+interval=3600
+
 [speaker]
-command=./speaker.sh
+command=$HOME/.config/i3blocks/speaker.sh
 interval=10
 
 [drivespace]
-command=./drivespace.sh
+command=$HOME/.config/i3blocks/drivespace.sh
 interval=600
 
 [date]
