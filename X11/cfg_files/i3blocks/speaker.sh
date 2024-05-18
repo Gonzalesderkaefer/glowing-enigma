@@ -5,10 +5,10 @@ SPEAKER_VOLUME="$(pactl get-sink-volume @DEFAULT_SINK@ | grep -E -o -m 1 "[0-9][
 get_output()
 {
     volume="$(pactl get-sink-volume @DEFAULT_SINK@ | grep -E -o -m 1 "[0-9][0-9][0-9]%|[0-9][0-9]%|[0-9]%" | head -1 | tr -d "%" )"
-    [ $volume -ge 100 ]  && echo  "$volume  " 
-    [ $volume -le 100 ] && [ $volume -ge 65 ] && echo  "$volume  " 
-    [ $volume -le 65 ] && [ $volume -ge 35 ] && echo  "$volume  " 
-    [ $volume -le 35 ]  && echo  "$volume  " 
+    ([ $volume -ge 100 ]  && echo  "$volume  " )||
+    ([ $volume -le 100 ] && [ $volume -ge 65 ] && echo  "$volume  " )||
+    ([ $volume -le 65 ] && [ $volume -ge 35 ] && echo  "$volume  " )||
+    ([ $volume -le 35 ]  && echo  "$volume  " )
 }
 
 case $BLOCK_BUTTON in
