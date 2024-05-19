@@ -28,4 +28,4 @@ interval=60
 
 [time]
 command=echo ""$(date +%H:%M)   ""
-interval=60
+interval=5
