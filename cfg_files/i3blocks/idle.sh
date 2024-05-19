@@ -26,7 +26,7 @@ stop_idle()
 
 case $BLOCK_BUTTON in
     1)
-        kill "$(pgrep swayidle)" && (echo "󰅶 "echo; echo \#f56464;) || start_idle
+        kill "$(pgrep swayidle)" && (echo "󰅶 "; echo; echo \#f56464;) || start_idle
         ;;
     *)
         [ -n "$(pgrep swayidle)" ] && (echo "󰾪 "; echo; echo \#ecc2fc) || (echo "󰅶 "echo; echo \#f56464;)
