@@ -8,7 +8,7 @@ interval=10
 
 [mem]
 command=echo "$(free -h | awk '/^Mem:/ {print $3"/"$2}') "
-interval 30
+interval=30
 
 [idleinhibit]
 command=$HOME/.config/i3blocks/idle.sh
