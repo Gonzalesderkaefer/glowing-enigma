@@ -10,6 +10,8 @@ start_idle()
     timeout 600 'swaylock -f -c 000000' \
     before-sleep 'swaylock -f -c 000000' &
     echo "󰾪 "
+    echo
+    echo \#ecc2fc
 }
 
 stop_idle()
@@ -24,9 +26,9 @@ stop_idle()
 
 case $BLOCK_BUTTON in
     1)
-        kill "$(pgrep swayidle)" && echo "󰅶 " || start_idle
+        kill "$(pgrep swayidle)" && (echo "󰅶 "echo; echo \#f56464;) || start_idle
         ;;
     *)
-        [ -n "$(pgrep swayidle)" ] && (echo "󰾪 ") || (echo "󰅶 ")
+        [ -n "$(pgrep swayidle)" ] && (echo "󰾪 "; echo; echo \#ecc2fc) || (echo "󰅶 "echo; echo \#f56464;)
         ;;
 esac
