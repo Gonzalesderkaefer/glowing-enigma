@@ -9,23 +9,29 @@ interval=10
 [mem]
 command=echo "$(free -h | awk '/^Mem:/ {print $3"/"$2}')  "
 interval=30
+color=#fc6885
 
 [idleinhibit]
 command=$HOME/.config/i3blocks/idle.sh
 interval=3600
+color=#ecc2fc
 
 [speaker]
 command=$HOME/.config/i3blocks/speaker.sh
 interval=10
+color=#987ae6
 
 [drivespace]
 command=$HOME/.config/i3blocks/drivespace.sh
 interval=600
+color=#cc5f7f
 
 [date]
 command=echo ""$(date +%d:%m)  ""
 interval=60
+color=#f5d0ac
 
 [time]
 command=echo ""$(date +%H:%M)   ""
 interval=5
+color=#f5d0ac
