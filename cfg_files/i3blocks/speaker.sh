@@ -17,17 +17,25 @@ case $BLOCK_BUTTON in
     1)
         pactl set-sink-mute @DEFAULT_SINK@ toggle
         get_output
+        echo 
+        echo \#FF6666
         ;;
     4) 
         pactl set-sink-volume @DEFAULT_SINK@ +5%
         get_output
+        echo
+        echo \#987ae6
         ;;
     5)
         pactl set-sink-volume @DEFAULT_SINK@ -5%
         get_output
+        echo
+        echo \#987ae6
         ;;
     *)
         get_output
+        echo
+        echo \#987ae6
         ;;
 esac
 # "", "", ""
