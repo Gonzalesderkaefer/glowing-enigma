@@ -16,19 +16,30 @@ start_idle()
 
 stop_idle()
 {
-    if [ -f "$PIDFILE" ]; then
-        PID="$(cat "$PIDFILE" )"
-        kill $PID
-        rm "$PIDFILE"
-    fi
+    pkill swayidle
+    echo "󰅶 " 
+    echo
+    echo \#f56464
 }
 
 
 case $BLOCK_BUTTON in
     1)
-        kill "$(pgrep swayidle)" && (echo "󰅶 "; echo; echo \#f56464;) || start_idle
+        if [ -n "$(pgrep swayidle)" ]; then
+            stop_idle
+        else
+            start_idle
+        fi
         ;;
     *)
-        [ -n "$(pgrep swayidle)" ] && (echo "󰾪 "; echo; echo \#ecc2fc) || (echo "󰅶 "echo; echo \#f56464;)
+        if [ -n "$(pgrep swayidle)" ]; then
+            echo "󰅶 " 
+            echo
+            echo \#f56464
+        else
+            echo "󰾪 "
+            echo
+            echo \#ecc2fc
+        fi
         ;;
 esac
