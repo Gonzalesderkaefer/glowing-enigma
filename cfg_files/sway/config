@@ -29,7 +29,7 @@ gaps inner 2
 gaps outer 2
 
 ### Configuring titlebar in tabbed mode
-font 'Jetbrains Mono' 10
+font 'Jetbrains Mono Nerd Font ExtraBold' 10
 
 ## Keyboard configuration
 

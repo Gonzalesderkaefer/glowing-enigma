@@ -29,9 +29,9 @@ color=#cc5f7f
 [date]
 command=echo ""$(date +%d:%m)  ""
 interval=60
-color=#f5d0ac
+color=#2ecc71
 
 [time]
 command=echo ""$(date +%H:%M)   ""
 interval=5
-color=#f5d0ac
+color=#2ecc71
