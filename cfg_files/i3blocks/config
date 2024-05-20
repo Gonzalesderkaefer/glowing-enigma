@@ -20,6 +20,7 @@ color=#ecc2fc
 command=$HOME/.config/i3blocks/speaker.sh
 interval=10
 color=#987ae6
+signal=3
 
 [drivespace]
 command=$HOME/.config/i3blocks/drivespace.sh
