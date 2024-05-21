@@ -66,17 +66,17 @@ exec swayidle -w \
 ## Startup Programs
 
 ### Launching bar
-# exec waybar -c $HOME/.config/waybar/config_sway
-bar {
-    position top
-    status_command i3blocks
-    colors {
-    	background #24273a
-    }
-    tray {
-    	icon_theme Papirus-Dark
-    }
-}
+exec waybar -c $HOME/.config/waybar/config_sway
+# bar {
+#     position top
+#     status_command i3blocks
+#     colors {
+#     	background #24273a
+#     }
+#     tray {
+#     	icon_theme Papirus-Dark
+#     }
+# }
 
 ### Launching Tray elements
 exec nm-applet
