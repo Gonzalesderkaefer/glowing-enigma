@@ -23,7 +23,7 @@ case $release in
         sudo apt update && sudo apt upgrade -y
 
         ### Installing packages 
-        sudo apt install i3blocks grim tmux swaylock zsh file-roller evince flatpak cbatticon network-manager network-manager-gnome network-manager-openconnect-gnome eom network-manager-openconnect lxappearance git lf neovim fonts-jetbrains-mono firefox-esr tlp alacritty brightnessctl pulsemixer sway wofi waybar fonts-material-design-icons-iconfont fonts-font-awesome xwayland libglib2.0-bin fonts-noto-color-emoji wlr-randr nala wl-clipboard mpv swayidle papirus-icon-theme gnome-themes-extra pulseaudio arc-theme libnotify-bin mako-notifier acpi-support acpid acpi linux-cpupower cpufrequtils openssh-server nnn fzf
+        sudo apt install i3blocks grim tmux swaylock zsh file-roller evince flatpak cbatticon network-manager network-manager-gnome network-manager-openconnect-gnome eom network-manager-openconnect lxappearance git lf neovim fonts-jetbrains-mono firefox-esr tlp alacritty brightnessctl pulsemixer  wofi waybar fonts-material-design-icons-iconfont fonts-font-awesome xwayland libglib2.0-bin fonts-noto-color-emoji wlr-randr nala wl-clipboard mpv swayidle papirus-icon-theme gnome-themes-extra pulseaudio arc-theme libnotify-bin mako-notifier acpi-support acpid acpi linux-cpupower cpufrequtils openssh-server nnn fzf
         ;;
     *Fedora* | *FEDORA* | *fedora*) echo -e "\033[0;32m Found Fedora.\033[0m"
         distro="Fedora"
@@ -36,10 +36,10 @@ case $release in
         sudo dnf update && 
 
         ### Installing packages 
-        sudo dnf install i3blocks sway grim tmux swaybg swayidle zsh swaylock pinentry-gtk pinentry \
+        sudo dnf install i3blocks  grim tmux swaybg swayidle zsh swaylock pinentry-gtk pinentry \
         thunar polkit-gnome nnn neovim waybar alacritty mpv firefox zathura zathura-pdf-poppler evince git pulseaudio-utils pipewire-utils file-roller \
         NetworkManager-openconnect-gnome wofi brightnessctl gsettings-desktop-schemas wl-clipboard papirus-icon-theme NetworkManager-tui eom tlp \
-        libnotify mako swaybg google-noto-color-emoji-fonts qalculate-gtk fzf 
+        libnotify mako google-noto-color-emoji-fonts qalculate-gtk fzf 
         ;;
     *Arch* | *ARCH* | *arch*) echo -e "\033[0;32m Found Arch Linux.\033[0m"
         distro="Arch"
@@ -52,7 +52,7 @@ case $release in
 	sudo pacman -Syu
 
         ### Installing packages 
-        sudo pacman -S swaybg fzf i3blocks grim tmux zsh nnn networkmanager  nm-connection-editor neovim sway waybar wofi zathura-pdf-poppler zathura evince webkit2gtk-4.1 networkmanager-openconnect firefox lf tlp alacritty pulseaudio pulsemixer waybar mpv gsettings-desktop-schemas swayidle swaylock openconnect lxappearance wl-clipboard file-roller papirus-icon-theme gnome-themes-extra arc-gtk-theme ttf-jetbrains-mono ttf-jetbrains-mono-nerd gcr
+        sudo pacman -S swaybg fzf i3blocks grim tmux zsh nnn networkmanager  nm-connection-editor neovim  waybar wofi zathura-pdf-poppler zathura evince webkit2gtk-4.1 networkmanager-openconnect firefox lf tlp alacritty pulseaudio pulsemixer waybar mpv gsettings-desktop-schemas swayidle swaylock openconnect lxappearance wl-clipboard file-roller papirus-icon-theme gnome-themes-extra arc-gtk-theme ttf-jetbrains-mono ttf-jetbrains-mono-nerd gcr
         ;;
     *)
         echo -e "\033[0;32m You seem to be using a distro that is not covered by this script \033[0m "
@@ -160,6 +160,14 @@ case "$SHELL" in
 	case "$choice" in
 	    "s" | "S"| "sway")
 			### If there are proprietary NVIDIA Drivers running write the following lines into .bash_profile 
+			case "$distro" in 
+			    "Arch") 
+				sudo pacman -S sway;;
+			    "Debian")
+				sudo apt install sway;;
+			    "Fedora")
+				sudo dnf install sway;;
+			esac
 			[ -z "$(lspci -v | grep "driver in use *. nvidia")" ] || echo 'export WLR_RENDERER=vulkan
 			export WLR_NO_HARDWARE_CURSORS=1
 			export XWAYLAND_NO_GLAMOR=1
@@ -167,12 +175,30 @@ case "$SHELL" in
 			;;
 	    "h" | "H" | "hyprland")
 			### If there are proprietary NVIDIA Drivers running write the following lines into .bash_profile 
+			case "$distro" in 
+			    "Arch") 
+				sudo pacman -S hyprland;;
+			    "Debian")
+				echo "You are running Debian Hyprland is not yet available on Debian."
+				echo "Please install it manually or install sway using 'sudo apt install sway'.";;
+			    "Fedora")
+				sudo dnf install hyprland;;
+			esac
 			[ -z "$(lspci -v | grep "driver in use *. nvidia")" ] || echo 'export WLR_RENDERER=vulkan
 			export WLR_NO_HARDWARE_CURSORS=1
 			export XWAYLAND_NO_GLAMOR=1
 			[ "$(tty)" = "/dev/tty1" ] && exec Hyprland'  >> $HOME/.bash_profile && '[ "$(tty)" = "/dev/tty1" ] && exec Hyprland' >> $HOME/.bash_profile
 			;;
 	    "r" | "R" | "River")
+			case "$distro" in 
+			    "Arch") 
+				sudo pacman -S river ;;
+			    "Debian")
+				echo "You are running Debian river is not yet available on Debian."
+				echo "Please install it manually or install sway using 'sudo apt install sway'.";;
+			    "Fedora")
+				sudo dnf install river ;;
+			esac
 			### If there are proprietary NVIDIA Drivers running write the following lines into .bash_profile 
 			[ -z "$(lspci -v | grep "driver in use *. nvidia")" ] || echo 'export WLR_RENDERER=vulkan
 			export WLR_NO_HARDWARE_CURSORS=1
