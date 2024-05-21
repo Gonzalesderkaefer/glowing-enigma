@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 PIDFILE="/tmp/swayidle"
 pgrep swayidle > "$PIDFILE"
@@ -29,6 +29,6 @@ case $BLOCK_BUTTON in
         kill "$(pgrep swayidle)" && (echo "󰅶 "; echo; echo \#f56464;) || start_idle
         ;;
     *)
-        [ -n "$(pgrep swayidle)" ] && (echo "󰾪 "; echo; echo \#ecc2fc) || (echo "󰅶 "echo; echo \#f56464;)
+        [ -n "$(pgrep swayidle)" ] && (echo "󰾪 "; echo; echo \#ecc2fc) || (echo "󰅶 "; echo; echo \#f56464;)
         ;;
 esac
