@@ -1,46 +1,47 @@
+#!/bin/bash
 
-#!/bin/sh
+PIDFILE="/tmp/swayidle.pid"
 
-PIDFILE="/tmp/swayidle"
-pgrep swayidle > "$PIDFILE"
+get_output() {
+    if [ -f "$PIDFILE" ] && kill -0 "$(cat "$PIDFILE")" 2>/dev/null; then
+        echo "󰾪 "
+        echo
+        echo "#ecc2fc"
+    else
+        echo "󰅶 "
+        echo
+        echo "#f56464"
+    fi
+}
 
-start_idle()
-{
+start_idle() {
     swayidle -w \
     timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
     timeout 600 'swaylock -f -c 000000' \
     before-sleep 'swaylock -f -c 000000' &
-    echo "󰾪 "
-    echo
-    echo \#ecc2fc
+    echo $! > "$PIDFILE"
+    get_output
 }
 
-stop_idle()
-{
-    pkill swayidle
-    echo "󰅶 " 
-    echo
-    echo \#f56464
+stop_idle() {
+    if [ -f "$PIDFILE" ]; then
+        PID="$(cat "$PIDFILE")"
+        if kill "$PID" 2>/dev/null; then
+            rm "$PIDFILE"
+        fi
+    fi
+    get_output
 }
-
 
 case $BLOCK_BUTTON in
     1)
-        if [ -n "$(pgrep swayidle)" ]; then
+        if [ -f "$PIDFILE" ] && kill -0 "$(cat "$PIDFILE")" 2>/dev/null; then
             stop_idle
         else
             start_idle
         fi
         ;;
     *)
-        if [ -n "$(pgrep swayidle)" ]; then
-            echo "󰅶 " 
-            echo
-            echo \#f56464
-        else
-            echo "󰾪 "
-            echo
-            echo \#ecc2fc
-        fi
+        get_output
         ;;
 esac
