@@ -1,17 +1,14 @@
-#!/bin/bash
+#!/bin/dash
 
 PIDFILE="/tmp/swayidle"
 pgrep swayidle > "$PIDFILE"
 
 start_idle()
 {
-    swayidle -w \
-    timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-    timeout 600 'swaylock -f -c 000000' \
-    before-sleep 'swaylock -f -c 000000' &
-    echo "󰾪 "
-    echo
-    echo \#ecc2fc
+    swayidle -w timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' & echo "󰾪 "
+    
+   # echo
+   # echo \#ecc2fc
 }
 
 stop_idle()

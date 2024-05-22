@@ -31,6 +31,11 @@ riverctl send-layout-cmd rivertile "main-ratio 0.5"
 # Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
 riverctl map normal Super Return spawn alacritty
 
+
+# Super+A to toggle waybar
+riverctl map normal Super A spawn $HOME/.config/river/killbar.sh 
+
+
 # Super+Q to close the focused view
 riverctl map normal Super Q close
 
