@@ -22,6 +22,9 @@ sh $HOME/.config/river/devicespecific
 # Start waybar
 waybar -c $HOME/.config/waybar/config_river &
 
+# Setting keyboard Layout to US-INTL
+riverctl keyboard-layout "us(altgr-intl)"
+
 # Start mako
 mako -c $HOME/.config/mako/mako.conf &
 
