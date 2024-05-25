@@ -187,6 +187,9 @@ bindsym $mod+space exec $HOME/.config/sway/scripts/kbnotify
 #### Lauching a Calculator
 bindsym XF86Calculator exec qalculate-gtk
 
+#### Killing bar
+bindsym $mod+a exec $HOME/.config/sway/killbar.sh
+
 #### Start a terminal
 bindsym $mod+Return exec $term
 
