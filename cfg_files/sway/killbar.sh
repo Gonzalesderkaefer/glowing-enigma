@@ -1,5 +1,5 @@
 #!/bin/sh
 
-kill $(pgrep waybar) || waybar -c $home/.config/waybar/config_sway &
+kill $(pgrep waybar) || waybar -c $HOME/.config/waybar/config_sway &
 
 
