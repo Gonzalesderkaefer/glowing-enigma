@@ -10,7 +10,7 @@ menu="$(echo " Poweroff
 case $menu in
     *Poweroff*) systemctl poweroff;;
     *Reboot*) systemctl reboot;;
-    *Logout*) hyprctl exit || riverctl exit || swaymsg exit;;
+    *Logout*) hyprctl dispatch exit || riverctl exit || swaymsg exit;;
     *Suspend* ) systemctl suspend ;;
     *Lock*) swaylock -f -c 000000;;
     *Hibernate* ) systemctl hibernate;;
