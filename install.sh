@@ -232,6 +232,14 @@ case "$SHELL" in
 	case "$choice" in
 	    "s" | "S" | "sway")
 		### If there are proprietary NVIDIA Drivers running write the following lines into .bash_profile 
+		case "$distro" in 
+		    "Arch") 
+			sudo pacman -S sway;;
+		    "Debian")
+			sudo apt install sway;;
+		    "Fedora")
+			sudo dnf install sway;;
+		esac
 		[ -z "$(lspci -v | grep "driver in use *. nvidia")" ] || (echo 'export WLR_RENDERER=vulkan
 		export WLR_NO_HARDWARE_CURSORS=1
 		export XWAYLAND_NO_GLAMOR=1' >> $HOME/.zshenv && echo '[ "$(tty)" = "/dev/tty1" ] && exec sway --unsupported-gpu' >> $HOME/.zprofile ) 
@@ -239,6 +247,15 @@ case "$SHELL" in
 		;;
 	    "h" | "H" | "hyprland")
 		### If there are proprietary NVIDIA Drivers running write the following lines into .bash_profile 
+		case "$distro" in 
+		    "Arch") 
+			sudo pacman -S hyprland;;
+		    "Debian")
+			echo "You are running Debian Hyprland is not yet available on Debian."
+			echo "Please install it manually or install sway using 'sudo apt install sway'.";;
+		    "Fedora")
+			sudo dnf install hyprland;;
+		esac
 		[ -z "$(lspci -v | grep "driver in use *. nvidia")" ] || (echo 'export WLR_RENDERER=vulkan
 		export WLR_NO_HARDWARE_CURSORS=1
 		export XWAYLAND_NO_GLAMOR=1' >> $HOME/.zshenv && echo '[ "$(tty)" = "/dev/tty1" ] && exec Hyprland' >> $HOME/.zprofile ) 
@@ -246,6 +263,15 @@ case "$SHELL" in
 		;;
 	    "r" | "R" | "river")
 		### If there are proprietary NVIDIA Drivers running write the following lines into .bash_profile 
+		case "$distro" in 
+		    "Arch") 
+			sudo pacman -S river;;
+		    "Debian")
+			echo "You are running Debian Hyprland is not yet available on Debian."
+			echo "Please install it manually or install sway using 'sudo apt install sway'.";;
+		    "Fedora")
+			sudo dnf install river;;
+		esac
 		[ -z "$(lspci -v | grep "driver in use *. nvidia")" ] || (echo 'export WLR_RENDERER=vulkan
 		export WLR_NO_HARDWARE_CURSORS=1
 		export XWAYLAND_NO_GLAMOR=1' >> $HOME/.zshenv && echo '[ "$(tty)" = "/dev/tty1" ] && exec river' >> $HOME/.zprofile ) 
