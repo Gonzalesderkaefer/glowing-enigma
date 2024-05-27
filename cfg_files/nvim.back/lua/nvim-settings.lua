@@ -1,4 +1,3 @@
-
 --Setting tab to 4 spaces
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -6,14 +5,14 @@ vim.opt.expandtab = true
 vim.bo.softtabstop = 4
 
 -- Setting space to leader
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Enable Numberlines
 vim.opt.number = true
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 
 -- Enable current line highlighting
 vim.cmd("set cursorline")
@@ -32,13 +31,8 @@ vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
 vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
 vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 
-
 -- Binding y to yank into +
 vim.cmd("set clipboard+=unnamedplus")
-
-
-
-
 
 -- Autocmds --
 -- Compile LaTeX after writing
@@ -49,6 +43,11 @@ vim.cmd("autocmd BufWritePost *.java !javac %")
 vim.cmd(' autocmd BufWritePost *.cpp !make "$(echo "%" | sed -e \'s/.cpp//\')" ')
 -- Compile c after saving
 vim.cmd(' autocmd BufWritePost *.c !make "$(echo "%" | sed -e \'s/.c//\')" ')
+
+-- Markdown
+vim.cmd(" autocmd BufReadPost *.md !pandoc % -o %.pdf ")
+vim.cmd(" autocmd BufWritePost *.md !pandoc % -o %.pdf ")
+vim.cmd(" autocmd BufWinLeave *.md !rm %.pdf ")
 
 --Open .tex file in Zathura upon opening
 vim.cmd(' autocmd BufReadPost *.tex !zathura "$(echo "%" | sed -e \'s/.tex/.pdf/\')" & ')
