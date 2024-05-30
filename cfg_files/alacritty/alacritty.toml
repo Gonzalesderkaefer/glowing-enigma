@@ -1,63 +1,78 @@
-[colors.bright]
-black = "#6272a4"
-blue = "#d6acff"
-cyan = "#a4ffff"
-green = "#69ff94"
-magenta = "#ff92df"
-red = "#ff6e6e"
-white = "#ffffff"
-yellow = "#ffffa5"
+[colors.primary]
+background = "#303446"
+foreground = "#c6d0f5"
+dim_foreground = "#838ba7"
+bright_foreground = "#c6d0f5"
 
 [colors.cursor]
-cursor = "CellForeground"
-text = "CellBackground"
-
-[colors.hints.end]
-background = "#282a36"
-foreground = "#f1fa8c"
-
-[colors.hints.start]
-background = "#f1fa8c"
-foreground = "#282a36"
-
-[colors.line_indicator]
-background = "None"
-foreground = "None"
-
-[colors.normal]
-black = "#21222c"
-blue = "#bd93f9"
-cyan = "#8be9fd"
-green = "#50fa7b"
-magenta = "#ff79c6"
-red = "#ff5555"
-white = "#f8f8f2"
-yellow = "#f1fa8c"
-
-[colors.primary]
-background = "#282a36"
-bright_foreground = "#ffffff"
-foreground = "#f8f8f2"
-
-##[colors.search."colors.footer_bar"]
-#background = "#282a36"
-#foreground = "#f8f8f2"
-
-[colors.search.focused_match]
-background = "#ffb86c"
-foreground = "#44475a"
-
-[colors.search.matches]
-background = "#50fa7b"
-foreground = "#44475a"
-
-[colors.selection]
-background = "#44475a"
-text = "CellForeground"
+text = "#303446"
+cursor = "#f2d5cf"
 
 [colors.vi_mode_cursor]
-cursor = "CellForeground"
-text = "CellBackground"
+text = "#303446"
+cursor = "#babbf1"
+
+[colors.search.matches]
+foreground = "#303446"
+background = "#a5adce"
+
+[colors.search.focused_match]
+foreground = "#303446"
+background = "#a6d189"
+
+[colors.footer_bar]
+foreground = "#303446"
+background = "#a5adce"
+
+[colors.hints.start]
+foreground = "#303446"
+background = "#e5c890"
+
+[colors.hints.end]
+foreground = "#303446"
+background = "#a5adce"
+
+[colors.selection]
+text = "#303446"
+background = "#f2d5cf"
+
+[colors.normal]
+black = "#51576d"
+red = "#e78284"
+green = "#a6d189"
+yellow = "#e5c890"
+blue = "#8caaee"
+magenta = "#f4b8e4"
+cyan = "#81c8be"
+white = "#b5bfe2"
+
+[colors.bright]
+black = "#626880"
+red = "#e78284"
+green = "#a6d189"
+yellow = "#e5c890"
+blue = "#8caaee"
+magenta = "#f4b8e4"
+cyan = "#81c8be"
+white = "#a5adce"
+
+[colors.dim]
+black = "#51576d"
+red = "#e78284"
+green = "#a6d189"
+yellow = "#e5c890"
+blue = "#8caaee"
+magenta = "#f4b8e4"
+cyan = "#81c8be"
+white = "#b5bfe2"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#ef9f76"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#f2d5cf"
 
 [font]
 size = 12
