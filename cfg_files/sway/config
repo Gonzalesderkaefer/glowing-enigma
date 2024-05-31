@@ -169,7 +169,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+q kill
 
 ### Take screenshot 
-bindsym $mod+p screenshot
+bindsym $mod+p exec screenshot
 
 ### Media and Display Controls
 bindsym XF86MonBrightnessUp exec brightnessctl -e s +30 
