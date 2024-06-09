@@ -52,9 +52,11 @@ set $menu rofi -show drun
 ## Startup Programs
 
 ### Launching bar
-bar {
-    status_command i3blocks
-}
+# bar {
+#     status_command i3blocks
+# }
+
+exec polybar
 
 ### Launching Tray elements
 exec nm-applet
