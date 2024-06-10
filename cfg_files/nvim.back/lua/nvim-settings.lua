@@ -23,7 +23,7 @@ vim.cmd("set splitbelow")
 -- Keybinds
 vim.keymap.set("n", "<C-i>", ":BufferNext<CR>")
 vim.keymap.set("n", "<C-W>", ":w | BufferClose<CR>")
-vim.keymap.set("n", "<leader>f", ":E<CR>")
+vim.keymap.set("n", "<leader>f", ":Explore<CR>")
 vim.keymap.set("n", "<F12>", ":20 split | terminal<CR>")
 
 vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
@@ -38,7 +38,7 @@ vim.cmd("set clipboard+=unnamedplus")
 -- Compile LaTeX after writing
 vim.cmd("autocmd BufWritePost *.tex !pdflatex %")
 -- Compile Java after writing
-vim.cmd("autocmd BufWritePost *.java !javac %")
+-- vim.cmd("autocmd BufWritePost *.java !javac %")
 -- Compile cpp after saving
 vim.cmd(' autocmd BufWritePost *.cpp !make "$(echo "%" | sed -e \'s/.cpp//\')" ')
 -- Compile c after saving
