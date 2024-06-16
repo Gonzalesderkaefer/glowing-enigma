@@ -93,8 +93,10 @@ extract()
     esac
 }
 
-
-
-
-
-
+	gO()
+	{
+	    echo "What programm (has to be GUI)?";
+	    read programm;
+	    nohup $programm $1 & sleep 1; 
+	    rm nohup.out;
+	}
