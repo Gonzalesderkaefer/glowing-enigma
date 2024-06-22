@@ -4,7 +4,6 @@
 
 # TODO:
 #     Idle_config
-#     Nitrogen
 #     notification daemon
 
 ## Setting colors
@@ -47,22 +46,22 @@ set $mod Mod4
 set $term alacritty 
 
 ### Setting the run menu
-set $menu rofi -show drun
+set $menu rofi -show drun -config $HOME/.config/rofi/config.rasi
 
 ## Startup Programs
 
 ### Launching bar
-# bar {
-#     status_command i3blocks
-# }
+bar {
+    status_command i3blocks
+    position top
+}
 
-exec polybar
+### Launching compositor
+exec picom
 
 ### Launching Tray elements
 exec nm-applet
 
-### Launching Pokit
-exec /lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 
 ## Keybindings 
 
@@ -142,9 +141,6 @@ bindsym $mod+w layout tabbed
 ### Kill current window
 bindsym $mod+q kill
 
-### Take screenshot 
-bindsym $mod+p screenshot
-
 ### Media and Display Controls
 bindsym XF86MonBrightnessUp exec brightnessctl -e s +30
 bindsym XF86MonBrightnessDown exec brightnessctl -e s 30-
@@ -170,6 +166,8 @@ bindsym Mod1+space exec $menu
 
 #### Start a browser
 bindsym $mod+b exec firefox -p
+
+
 
 
 
