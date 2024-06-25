@@ -13,8 +13,8 @@ color=#fc6885
 
 [idleinhibit]
 command=$HOME/.config/i3blocks/idle.sh
-interval=3600
-color=#ecc2fc
+interval=once
+signal=4
 
 [speaker]
 command=$HOME/.config/i3blocks/speaker.sh

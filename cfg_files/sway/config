@@ -66,17 +66,17 @@ exec swayidle -w \
 ## Startup Programs
 
 ### Launching bar
-exec waybar -c $HOME/.config/waybar/config_sway
-# bar {
-#     position top
-#     status_command i3blocks
-#     colors {
-#     	background #24273a
-#     }
-#     tray {
-#     	icon_theme Papirus-Dark
-#     }
-# }
+# exec waybar -c $HOME/.config/waybar/config_sway
+bar {
+    position top
+    status_command i3blocks
+    colors {
+    	background #24273a
+    }
+    tray {
+    	icon_theme Papirus-Dark
+    }
+}
 
 ### Launching Tray elements
 exec nm-applet
@@ -182,7 +182,11 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -R
 bindsym $mod+space exec $HOME/.config/sway/scripts/kbnotify
 
 
+
 ### Launchers
+
+#### Toggling idle 
+bindsym $mod+i exec $HOME/.config/sway/idle_toggle.sh
 
 #### Lauching a Calculator
 bindsym XF86Calculator exec qalculate-gtk
