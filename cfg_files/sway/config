@@ -186,13 +186,13 @@ bindsym $mod+space exec $HOME/.config/sway/scripts/kbnotify
 ### Launchers
 
 #### Toggling idle 
-bindsym $mod+i exec $HOME/.config/sway/idle_toggle.sh
+bindsym $mod+i exec $HOME/.config/sway/modules/idle_toggle.sh
 
 #### Lauching a Calculator
 bindsym XF86Calculator exec qalculate-gtk
 
 #### Killing bar
-bindsym $mod+a exec $HOME/.config/sway/killbar.sh
+bindsym $mod+a exec $HOME/.config/sway/modules/killbar.sh
 
 #### Start a terminal
 bindsym $mod+Return exec $term
