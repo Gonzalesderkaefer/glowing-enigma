@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# Hello there fellow traveler. (just kidding) This script is propetually work-in-progress. So if for some reason you decide to 
-# Run or inspect this script and have suggestions to improve this script. Feel free to let me know.
 
 
 ## Determine what distro is running 
