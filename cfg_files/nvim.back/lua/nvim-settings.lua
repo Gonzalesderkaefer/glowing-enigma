@@ -45,9 +45,9 @@ vim.cmd(' autocmd BufWritePost *.cpp !make "$(echo "%" | sed -e \'s/.cpp//\')" '
 vim.cmd(' autocmd BufWritePost *.c !make "$(echo "%" | sed -e \'s/.c//\')" ')
 
 -- Markdown
-vim.cmd(" autocmd BufReadPost *.md !pandoc % -o %.pdf ")
-vim.cmd(" autocmd BufWritePost *.md !pandoc % -o %.pdf ")
-vim.cmd(" autocmd BufWinLeave *.md !rm %.pdf ")
+-- vim.cmd(" autocmd BufReadPost *.md !pandoc % -o %.pdf ")
+-- vim.cmd(" autocmd BufWritePost *.md !pandoc % -o %.pdf ")
+-- vim.cmd(" autocmd BufWinLeave *.md !rm %.pdf ")
 
 --Open .tex file in Zathura upon opening
 vim.cmd(' autocmd BufReadPost *.tex !zathura "$(echo "%" | sed -e \'s/.tex/.pdf/\')" & ')
